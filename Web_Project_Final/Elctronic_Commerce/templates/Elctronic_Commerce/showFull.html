@@ -1,0 +1,37 @@
+{% extends 'Elctronic_Commerce/layout.html' %}
+{% block body %}
+<h1>Device selected</h1>
+
+<div class="table-wrapper">
+  <table class="fl-table">
+      <thead>
+      <tr>
+        <th>ID</th>
+          <th>laptopType</th>
+          <th>price</th>
+          <th>Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <tr>
+          <td>{{ device.id}}</td>
+          <td>{{ device.laptopType }}</td>
+          <td>{{device.price }}</td>
+          <td>{{ device.description }}</td>
+        </tr>
+      </tr>
+      <tbody>
+  </table>
+</div>
+
+
+
+<form method="post" action="{% url 'add_device' device.id %}">
+  
+    {% csrf_token %}
+    <button type="submit">Add to My Devices</button>
+  </form>
+  <p>To update device click <a href="{% url 'update_device' device.id %}">Here!</a>.</p>
+  <p>My list <a href="{% url 'my_devices'%}">Here!</a>.</p>
+{% endblock %}

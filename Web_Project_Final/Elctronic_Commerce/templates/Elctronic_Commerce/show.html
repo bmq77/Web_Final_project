@@ -1,0 +1,32 @@
+{% extends 'Elctronic_Commerce/layout.html' %}
+{% block body %}
+    <h1>Device List</h1>
+    <div class="table-wrapper">
+      <table class="fl-table">
+          <thead>
+          <tr>
+            <th>ID</th>
+              <th>laptopType</th>
+              <th>price</th>
+              <th>Brief description</th>
+              <th>Get more details</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            {% for d in devices %}
+            <tr>
+              <td>{{ d.id}}</td>
+              <td>{{ d.laptopType }}</td>
+              <td>{{ d.price }}</td>
+              <td>{{ d.briefDescription }}</td>
+              <td><a href="{% url 'showFull' d.id %}" >click here</a></td>
+            </tr>
+          {% endfor %}
+          </tr>
+          <tbody>
+      </table>
+  </div>
+
+     <p>You can add device to this list from <a href="{% url 'AssestADD' %}" >Here!</a>.</p>
+{% endblock %}

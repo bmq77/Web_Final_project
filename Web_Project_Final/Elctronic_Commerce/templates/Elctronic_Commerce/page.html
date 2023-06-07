@@ -1,0 +1,32 @@
+{% extends 'Elctronic_Commerce/layout.html' %}
+{% block body %}
+
+        <form action="{% url 'Add' %}" method="post">
+            {% csrf_token %}
+            <div class="container">
+              <h1>Add device</h1>
+              <p>Please fill in this form to add device</p>
+              <hr>
+    
+              <label for="laptopType"><b>laptopType</b></label>
+              <input type="text" placeholder="Enter laptopType" name="laptopType" id="laptopType" required>
+    
+              <label for="price"><b>price</b></label>
+              <input type="text" placeholder="Enter price" name="price" id="price" required>
+
+              <label for="briefDescription"><b>briefDescription</b></label>
+              <input type="text" placeholder="Enter briefDescription" name="briefDescription" id="briefDescription" required>
+    
+              <label for="description"><b>description</b></label>
+              <input type="text" placeholder="Enter description" name="description" id="description" required>
+
+              <hr>
+    
+              <button type="submit" class="Add">Add device</button>
+            </div>
+    
+            <div class="container signin">
+              <p>Return to the list from  <a href="{% url 'pagetest' %}" >Here!</a>.</p>
+            </div>
+          </form>
+          {% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'Elctronic_Commerce/layout.html' %}
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="laptopType">Laptop Type:</label>
+        <input type="text" id="laptopType" name="laptopType" value="{{ device.laptopType }}">
+    </div>
+    <div>
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" value="{{ device.price }}">
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value="{{ device.description }}">
+    </div>
+    <div>
+        <label for="briefDescription">Brief Description:</label>
+        <input type="text" id="briefDescription" name="briefDescription" value="{{ device.briefDescription }}">
+    </div>
+    <button type="submit">Update Device</button>
+</form>
+{% endblock %}

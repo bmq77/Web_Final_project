@@ -1,0 +1,26 @@
+{% extends 'Elctronic_Commerce/layout.html' %}
+{% block body %}
+<form action="" method="POST">
+  {% csrf_token %}
+  <div class="imgcontainer">
+    <img src="https://elements-cover-images-0.imgix.net/579bf4b0-0afe-4cd1-8228-6db7aacfbc3e?auto=compress&crop=edges&fit=crop&fm=jpeg&h=630&w=1200&s=9afd91b56bcc39caab4b72fcfd77506f" alt="google.com">
+  </div>
+  <div class="container">
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Username" name="Username" id="Username" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+  
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">New User? <a href="{% url 'htmll'%}" >Register</a></span>
+  </div>
+
+</form>
+      {% endblock %}

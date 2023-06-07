@@ -1,0 +1,38 @@
+{% extends 'Elctronic_Commerce/layout.html' %}
+
+{% block body %}
+
+<h1>My Devices</h1>
+
+{% if devices %}
+<div class="table-wrapper">
+  <table class="fl-table">
+      <thead>
+      <tr>
+        <th>ID</th>
+          <th>laptopType</th>
+          <th>price</th>
+          <th>Brief description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+    {% for device in devices %}
+    <tr>
+      <td>{{ device.id}}</td>
+      <td>{{ device.laptopType }}</td>
+      <td>{{ device.price }}</td>
+      <td>{{ device.briefDescription }}</td>
+    </tr>
+    {% endfor %}
+  </tr>
+  <tbody>
+</table>
+</div>
+
+{% else %}
+  <h1>You did not add anything yet</h1>
+{% endif %}
+<p>Return to the main list <a href="{% url 'pagetest' %}" >Here!</a>.</p>
+
+{% endblock %}
